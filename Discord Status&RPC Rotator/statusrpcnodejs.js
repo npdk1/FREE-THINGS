@@ -11,7 +11,7 @@ const TIME_CONFIG = {
 // RPC configurations
 const RPC_CONFIGS = [
     {
-        client_id: "1347747968807080026",
+        client_id: "",
         showTime: true,
         state: "Roblox Script",
         details: "DevYoungster Project",
@@ -25,7 +25,7 @@ const RPC_CONFIGS = [
         smallText: "npdk1 on top"
     },
     {
-        client_id: "1320967732409143366",
+        client_id: "",
         showTime: true,
         state: "Shopping",
         details: "KTOOLS MARKET",
@@ -39,7 +39,7 @@ const RPC_CONFIGS = [
         smallText: "Payment"
     },
     {
-        client_id: "1348014406134403082",
+        client_id: "",
         showTime: true,
         state: "Fixing Bot",
         details: "Fixing discord bot :3",
