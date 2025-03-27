@@ -1,0 +1,2982 @@
+* {
+    font-family: "Poppins",sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    box-sizing: border-box
+}
+
+::selection {
+    background: #eee;
+    color: #09090b
+}
+
+a {
+    text-decoration: none;
+    color: #fff
+}
+
+.clr-field {
+    width: 100% !important
+}
+
+.clr-field button {
+    width: 22px !important;
+    height: 22px !important;
+    left: 5px;
+    right: auto;
+    border-radius: 50%
+}
+
+.clr-field input {
+    padding-left: 36px !important
+}
+
+.button_enable {
+    font-size: 1.6rem;
+    height: 45px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: rgba(220,17,1,.16);
+    border: 2px solid rgba(220,17,1,.3);
+    color: #ff0303;
+    margin-bottom: 8px;
+    cursor: pointer;
+    outline: none
+}
+
+.button_enable.enable {
+    background-color: rgba(7,149,66,.16);
+    border: 2px solid rgba(7,149,66,.3);
+    color: #0ad406
+}
+
+.button_enable.active {
+    animation: bounce .3s
+}
+
+.button_enable.unactive {
+    animation: bounceRepeat .3s
+}
+
+.checkbox-wrapper-22 .switch {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 40px
+}
+
+.checkbox-wrapper-22 .switch input {
+    display: none
+}
+
+.checkbox-wrapper-22 .switch .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .3s
+}
+
+.checkbox-wrapper-22 .switch .slider:before {
+    background-color: #fff;
+    bottom: 5px;
+    content: "";
+    height: 10px;
+    left: 4px;
+    position: absolute;
+    transition: .3s;
+    width: 10px
+}
+
+.checkbox-wrapper-22 .switch input:checked+.slider {
+    background-color: #0974f1;
+    box-shadow: rgba(9,117,241,.8) 0px 0px 10px
+}
+
+.checkbox-wrapper-22 .switch input:checked+.slider:before {
+    transform: translateX(22px)
+}
+
+.checkbox-wrapper-22 .switch .slider.round {
+    border-radius: 34px
+}
+
+.checkbox-wrapper-22 .switch .slider.round:before {
+    border-radius: 50%
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    color: var(--white_color)
+}
+
+.iziToast-capsule {
+    line-height: 0 !important
+}
+
+.izitoast_notify {
+    border-radius: 15px !important
+}
+
+.iziToast-close {
+    filter: invert(1)
+}
+
+.clr-dark {
+    background-color: #1c1c1c !important;
+    border: 1px solid #2d2d2d !important
+}
+
+.clr-picker {
+    padding: 10px
+}
+
+@keyframes showPopup {
+    from {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1
+    }
+}
+
+.izitoast_notify_err {
+    border-radius: 15px !important
+}
+
+.izitoast_notify_err::after {
+    border-radius: 15px !important
+}
+
+.izitoast_notify_success {
+    border-radius: 15px !important
+}
+
+.izitoast_notify_success::after {
+    border-radius: 15px !important
+}
+
+.iziToast {
+    width: auto !important
+}
+
+@media(max-width: 768px) {
+    .iziToast {
+        margin-top:5px !important
+    }
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1)
+    }
+
+    25% {
+        transform: translateX(-25%)
+    }
+
+    50% {
+        transform: translateX(-50%)
+    }
+
+    75% {
+        transform: translateX(-25%)
+    }
+
+    100% {
+        transform: translateX(1)
+    }
+}
+
+@keyframes rainbowAnimation {
+    0% {
+        background-position: 0% 50%
+    }
+
+    100% {
+        background-position: 100% 50%
+    }
+}
+
+@keyframes caret-blink {
+    50% {
+        opacity: 0
+    }
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0
+    }
+
+    60% {
+        background-position: 180px
+    }
+
+    100% {
+        background-position: 180px
+    }
+}
+
+.tippy-box[data-theme~=tooltip_container] {
+    background-color: rgba(51,51,51,.8);
+    border: 2px solid rgba(51,51,51,.2);
+    color: #fff;
+    border-radius: 15px;
+    font-size: 14px;
+    padding: 2px;
+    line-height: unset;
+    padding: 4px 8px;
+    text-align: center;
+    line-height: 1.3em
+}
+
+.tippy-box[data-theme~=tooltip_container] .tippy-content {
+    padding: 0
+}
+
+@keyframes bg-animation {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    10% {
+        transform: translate(-5%, -5%)
+    }
+
+    20% {
+        transform: translate(-10%, 5%)
+    }
+
+    30% {
+        transform: translate(5%, -10%)
+    }
+
+    40% {
+        transform: translate(-5%, 15%)
+    }
+
+    50% {
+        transform: translate(-10%, 5%)
+    }
+
+    60% {
+        transform: translate(15%, 0)
+    }
+
+    70% {
+        transform: translate(0, 10%)
+    }
+
+    80% {
+        transform: translate(-15%, 0)
+    }
+
+    90% {
+        transform: translate(10%, 5%)
+    }
+
+    100% {
+        transform: translate(5%, 0)
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+.wave-preview {
+    background: rgba(255,255,255,.25);
+    border-radius: 1000% 1000% 0 0;
+    position: absolute;
+    width: 200%;
+    height: 40px;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: .8;
+    bottom: 0;
+    left: 0;
+    z-index: 0
+}
+
+.wave1 {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: .8
+}
+
+.wave2 {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: .9
+}
+
+@keyframes hidePopup {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0
+    }
+}
+
+@keyframes showOverlay {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes hideOverlay {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px)
+    }
+
+    50% {
+        transform: translateY(2px)
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+@keyframes bounceRepeat {
+    0% {
+        transform: translateY(0px)
+    }
+
+    50% {
+        transform: translateY(2px)
+    }
+
+    100% {
+        transform: translateY(0px)
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8392156863);
+    z-index: 800;
+    opacity: 0;
+    transition: all .3s ease;
+    animation: .3s
+}
+
+.overlay.show {
+    opacity: 1
+}
+
+.overlay.hide {
+    opacity: 0;
+    display: none !important
+}
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,button,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    outline: none
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg)
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg)
+    }
+}
+
+input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.div_module {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8392156863);
+    z-index: 800;
+    opacity: 0;
+    transition: all .3s ease
+}
+
+body,html {
+    margin: 0;
+    padding: 0
+}
+
+.overlay.show {
+    animation-name: showOverlay
+}
+
+.overlay.hide {
+    animation-name: hideOverlay
+}
+
+.stars-drop-preview {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: rgba(0,0,0,0);
+    animation: animStar 50s linear infinite
+}
+
+.stars-drop-preview:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: rgba(0,0,0,0)
+}
+
+.stars-drop-preview2 {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(0,0,0,0);
+    animation: animStar 100s linear infinite
+}
+
+.stars-drop-preview2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: rgba(0,0,0,0)
+}
+
+.stars-drop-preview3 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(0,0,0,0);
+    animation: animStar 150s linear infinite
+}
+
+.stars-drop-preview3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: rgba(0,0,0,0)
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0px)
+    }
+
+    to {
+        transform: translateY(-2000px)
+    }
+}
+
+.pricing-card-flex {
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+    gap: 10px;
+    row-gap: 20px;
+    margin-top: 15px
+}
+
+@media(max-width: 768px) {
+    .pricing-card-flex {
+        flex-direction:column;
+        align-items: center
+    }
+}
+
+.pricing-card-flex .pricing-card_container {
+    padding: 24px;
+    border-radius: 15px;
+    max-width: 350px;
+    transition: .3s
+}
+
+.pricing-card-flex .pricing-card_container .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px
+}
+
+.pricing-card-flex .pricing-card_container .card-top .flex-svg {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.pricing-card-flex .pricing-card_container .card-top .svg {
+    font-size: 2.6rem;
+    color: #fff
+}
+
+.pricing-card-flex .pricing-card_container .card-top .card-header {
+    font-size: 2.4rem;
+    line-height: 1.3em;
+    font-weight: 500;
+    color: #fff
+}
+
+.pricing-card-flex .pricing-card_container .card-top .price {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1em
+}
+
+.pricing-card-flex .pricing-card_container .card-top .price .price_description {
+    font-size: 1.6rem;
+    color: #dcdcdc
+}
+
+.pricing-card-flex .pricing-card_container .card-top .description {
+    font-size: 1.6rem;
+    color: #ededed;
+    line-height: 1.3em;
+    opacity: .8
+}
+
+.pricing-card-flex .pricing-card_container .feature_list {
+    list-style: none;
+    margin-top: 20px;
+    font-size: 1.4rem;
+    color: #fafafa
+}
+
+.pricing-card-flex .pricing-card_container .feature_list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.pricing-card-flex .pricing-card_container .feature_list li svg {
+    font-size: 1.6rem;
+    color: #fafafa;
+    margin-right: 5px
+}
+
+.pricing-card-flex .pricing-card_container a {
+    width: 100%
+}
+
+.pricing-card-flex .pricing-card_container .button {
+    width: 100%;
+    height: 45px;
+    font-size: 1.6rem;
+    background-color: rgba(68,68,68,.231372549);
+    border: 2px solid rgba(69,69,69,.1843137255);
+    transition: .3s;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border .5s,background .5s
+}
+
+.pricing-card-flex .pricing-card_container .button:hover {
+    background-color: rgba(69,69,69,.1843137255);
+    border: 2px solid rgba(53,53,54,.9019607843)
+}
+
+.pricing-card-flex .pricing-card_container .button.active {
+    animation: bounce .3s
+}
+
+.pricing-card-flex .pricing-card_container .button.unactive {
+    animation: bounceRepeat .3s
+}
+
+.pricing-card-flex .pricing-card_container.free {
+    background-color: #151515;
+    border: 2px solid rgba(63,63,63,.41)
+}
+
+.pricing-card-flex .pricing-card_container.premium {
+    background-color: rgba(54,140,190,.1019607843);
+    border: 2px solid rgba(54,140,190,.2549019608)
+}
+
+.pricing-card-flex .pricing-card_container.premium:hover {
+    background-color: rgba(54,140,190,.2549019608);
+    border: 2px solid #368cbe
+}
+
+.pricing-card-flex .pricing-card_container.premium .card-top .card-header {
+    color: #368cbe
+}
+
+.pricing-card-flex .pricing-card_container.premium a {
+    width: 100%
+}
+
+.pricing-card-flex .pricing-card_container.premium .svg {
+    color: #368cbe
+}
+
+.pricing-card-flex .pricing-card_container.premium .button {
+    background-color: rgba(54,140,190,.1019607843);
+    border: 2px solid rgba(54,140,190,.2549019608)
+}
+
+.pricing-card-flex .pricing-card_container.premium .button:hover {
+    background-color: rgba(54,140,190,.2549019608);
+    border: 2px solid #368cbe
+}
+
+.pricing-card-flex .pricing-card_container.premium .button.active {
+    animation: bounce .3s
+}
+
+.pricing-card-flex .pricing-card_container.premium .button.unactive {
+    animation: bounceRepeat .3s
+}
+
+.profile-body-1 {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex
+}
+
+.profile-body-1 canvas {
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.profile-body-1 .overlay_audio {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 101%;
+    height: 101%;
+    background-color: rgba(0,0,0,.9);
+    z-index: 800;
+    transition: all .3s ease;
+    animation: .5s;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px)
+}
+
+.profile-body-1 .overlay_audio .text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    width: max-content
+}
+
+.profile-body-1 .revealAudioLike {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    transition: .5s;
+    opacity: 0;
+    z-index: 5
+}
+
+.profile-body-1 .revealAudioLike.active {
+    opacity: 1
+}
+
+.profile-body-1 .revealAudioLike .audio_control {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 10px;
+    background-color: rgba(15,15,15,.2);
+    padding: 15px;
+    transition: .5s;
+    gap: 20px;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.profile-body-1 .revealAudioLike .audio_control:hover {
+    width: 180px;
+    padding-right: 25px
+}
+
+.profile-body-1 .revealAudioLike .audio_control .volumeIcon {
+    font-size: 2.8rem;
+    color: var(--audioLikeColor)
+}
+
+.profile-body-1 .revealAudioLike .audio_control .volumeIcon.active {
+    animation: bounce .3s
+}
+
+.profile-body-1 .revealAudioLike .audio_control .volumeIcon.unactive {
+    animation: bounceRepeat .3s
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container {
+    position: relative;
+    width: 100%
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-target {
+    border: none;
+    box-shadow: unset;
+    background-color: #555
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-connect {
+    background-color: var(--audioLikeColor)
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-base,.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-connects {
+    z-index: unset
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-connects {
+    background-color: var(--audioLikeRgba05)
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-horizontal {
+    height: 8px
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-handle {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 16px !important;
+    height: 16px !important;
+    box-shadow: unset;
+    border: none;
+    top: -4px !important;
+    right: -12px !important;
+    cursor: pointer
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-handle::after {
+    display: none
+}
+
+.profile-body-1 .revealAudioLike .audio_control .slider-container .noUi-handle::before {
+    display: none
+}
+
+.profile-body-1 .revealAudioLike .like_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    width: 58px;
+    height: 58px;
+    border-radius: 10px;
+    background-color: rgba(15,15,15,.2);
+    padding: 15px;
+    transition: .5s;
+    gap: 20px;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.profile-body-1 .revealAudioLike .like_button.active {
+    animation: bounce .3s
+}
+
+.profile-body-1 .revealAudioLike .like_button.unactive {
+    animation: bounceRepeat .3s
+}
+
+.profile-body-1 .revealAudioLike .like_button input:checked+.likeIcon {
+    color: #c50b2b
+}
+
+.profile-body-1 .revealAudioLike .like_button .likeIcon {
+    font-size: 2.8rem;
+    flex-shrink: 0;
+    color: var(--audioLikeColor)
+}
+
+.profile-body-1 .background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-size: cover !important;
+    background-position: 50% !important;
+    z-index: -1
+}
+
+.profile-body-1 .background .noise-effect {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: rgba(0,0,0,0) url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible
+}
+
+.profile-body-1 .background .stars-drop {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: rgba(0,0,0,0);
+    animation: animStar 50s linear infinite
+}
+
+.profile-body-1 .background .stars-drop:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: rgba(0,0,0,0)
+}
+
+.profile-body-1 .background .stars-drop2 {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(0,0,0,0);
+    animation: animStar 100s linear infinite
+}
+
+.profile-body-1 .background .stars-drop2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: rgba(0,0,0,0)
+}
+
+.profile-body-1 .background .stars-drop3 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(0,0,0,0);
+    animation: animStar 150s linear infinite
+}
+
+.profile-body-1 .background .stars-drop3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: rgba(0,0,0,0)
+}
+
+.profile-body-1 .header-header {
+    display: none
+}
+
+.profile-body-1 .footer_container {
+    display: none
+}
+
+.profile-body-1 .bio-container {
+    max-width: 730px;
+    width: var(--bioWidth);
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container {
+        width:95vw
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container {
+    transform-style: preserve-3d;
+    border-radius: 25px;
+    height: max-content;
+    -webkit-backdrop-filter: blur(var(--backgroundBlur));
+    backdrop-filter: blur(var(--backgroundBlur));
+    background: var(--backgroundColor);
+    border-radius: var(--borderRadius);
+    border: var(--border)
+}
+
+.profile-body-1 .bio-container .bio_content_container.reveal {
+    transition: scale 1s,opacity 1s;
+    opacity: 0
+}
+
+.profile-body-1 .bio-container .bio_content_container.reveal.active {
+    opacity: 1
+}
+
+.profile-body-1 .bio-container .bio_content_container .bio_small_infomation {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    z-index: 1
+}
+
+.profile-body-1 .bio-container .bio_content_container .bio_small_infomation .bio_infomation {
+    display: flex;
+    align-items: center
+}
+
+.profile-body-1 .bio-container .bio_content_container .bio_small_infomation .bio_infomation svg {
+    font-size: 2rem;
+    color: var(--nameColor);
+    margin-right: 5px
+}
+
+.profile-body-1 .bio-container .bio_content_container .bio_small_infomation .bio_infomation .text {
+    font-size: 1.4rem;
+    color: var(--nameColor)
+}
+
+.profile-body-1 .bio-container .bio_content_container .bio_small_infomation .border {
+    content: "";
+    height: 15px;
+    background-color: rgba(255,255,255,.2);
+    width: 2px;
+    cursor: pointer
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    overflow: hidden
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container {
+        padding:15px 15px 40px 15px
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 650px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top.reveal {
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    overflow: hidden;
+    height: 0px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top.reveal.active {
+    opacity: 1;
+    height: 160px;
+    overflow: unset
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .img_container {
+    position: relative
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .img_container .img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    color: #1a1a1a
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .top .img_container .img {
+        width:120px;
+        height: 120px
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .img_container .img_effect {
+    position: absolute;
+    width: 120%;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column {
+        width:100%
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .header {
+    color: var(--nameColor);
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-shadow: var(--nameGlow);
+    margin-left: 8px;
+    outline: none;
+    max-width: 400px;
+    margin-bottom: 3px;
+    line-height: 1.3em
+}
+
+@keyframes shine_effect {
+    0% {
+        background-position: -500%
+    }
+
+    100% {
+        background-position: 500%
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .header.shine_effect {
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, var(--nameColor), var(--nameColor), #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine_effect 2s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    text-shadow: unset !important
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .header.rainbow-text {
+    animation: rainbowAnimation 4s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+    background-size: 400% 100%;
+    color: rgba(0,0,0,0);
+    text-shadow: none
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .header .Typewriter__wrapper {
+    max-width: 400px;
+    font-weight: 600;
+    outline: none;
+    text-shadow: var(--nameGlow);
+    font-size: 1em
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .header .Typewriter__wrapper {
+        max-width:none;
+        min-width: 0px
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .header .Typewriter__cursor {
+    font-weight: 600;
+    text-shadow: var(--nameGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container {
+    display: flex;
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    padding: 6px 10px;
+    line-height: 0;
+    border-radius: 15px;
+    gap: 8px
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container {
+        padding:4px 6px
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container.singleColor svg {
+    color: var(--badgeColor) !important
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container.badgeGlow svg {
+    filter: var(--badgeGlow) !important
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container .badge_img {
+    width: 20px;
+    height: 20px
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container .badge_img {
+        width:18px;
+        height: 18px
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container .badge_img.badgeImgGlow {
+    filter: var(--badgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg {
+    font-size: 2rem;
+    outline: none;
+    border: none
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg {
+        font-size:1.8rem
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#premium {
+    color: #c3fffd;
+    filter: var(--premiumBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#verify {
+    color: #009fff;
+    filter: var(--verifyBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#bughunter {
+    color: #37ff74;
+    filter: var(--bugHunterBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#og {
+    color: #8a2be2;
+    filter: var(--ogBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#developer {
+    color: #4caf50;
+    filter: var(--developerBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#staff {
+    color: #b2b6f6;
+    filter: var(--staffBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#boost {
+    color: #db3838;
+    filter: var(--boostBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#valentine {
+    color: #c50b2b;
+    filter: var(--valentineBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .flex .badge_container svg#unleash {
+    color: #2ea967;
+    filter: var(--unleashBadgeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .bio_description {
+    font-size: 1.6rem;
+    line-height: 1.4em;
+    color: var(--descriptionColor);
+    text-shadow: var(--descriptionGlow);
+    max-width: 400px;
+    word-wrap: break-word;
+    outline: none;
+    margin-left: 8px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .bio_description .Typewriter__wrapper {
+    max-width: 400px;
+    font-size: 1em;
+    outline: none;
+    white-space: nowrap;
+    text-shadow: var(--descriptionGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .bio_description .Typewriter__cursor {
+    text-shadow: var(--descriptionGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item {
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
+    padding: 6px 8px;
+    cursor: pointer;
+    background: none;
+    border-radius: 5px;
+    filter: var(--iconGlow) !important;
+    transition: scale .3s ease
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item:hover {
+    scale: 1.1
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item .img {
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: var(--customizeIconGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item.discord {
+    transition: .4s
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item.discord:hover {
+    background-color: rgba(51,51,51,.2);
+    border-radius: 50px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item .svg_text {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-left: 5px;
+    font-weight: 500
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item.singleColor svg {
+    color: var(--iconColor) !important
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item.singleColor .svg_text {
+    color: var(--iconColor) !important
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg {
+    color: #000
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#snapChatSvg {
+    color: #fffc00;
+    filter: var(--snapChatGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#instagramSvg {
+    color: #f472b6;
+    filter: var(--instagramGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#youtubeSvg {
+    color: red;
+    filter: var(--youtubeGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#redditSvg {
+    color: #fe4000;
+    filter: var(--redditGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#tiktokSvg {
+    color: #fff;
+    filter: var(--tiktokGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#telegramSvg {
+    color: #2aabee;
+    filter: var(--telegramGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#facebookSvg {
+    color: #2563eb;
+    filter: var(--facebookGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#spotifySvg {
+    color: #1ed760;
+    filter: var(--spotifyGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#steamSvg {
+    color: #fff;
+    filter: var(--steamGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#discordSvg {
+    color: #5865f2;
+    filter: var(--discordGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#riotSvg {
+    color: #d1363a;
+    filter: var(--riotGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#pinterestSvg {
+    color: #e4001c;
+    filter: var(--pinterestGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#emailSvg {
+    color: #fff;
+    filter: var(--emailGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#robloxSvg {
+    color: #fff;
+    filter: var(--robloxGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#paypalSvg {
+    color: #003087;
+    filter: var(--paypalGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#ethSvg {
+    color: #8c8c8c;
+    filter: var(--ethGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#btcSVG {
+    color: #ef8e19;
+    filter: var(--btcGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#ltcSvg {
+    color: #325a98;
+    filter: var(--ltcGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .top .flex-column .svg_container .svg_item svg#soundcloudSvg {
+    color: #ff4700;
+    filter: var(--soundcloudGlow)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord {
+        flex-direction:column
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 50%;
+    min-width: 280px;
+    width: 0
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container {
+        width:100%;
+        min-width: unset
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    padding: 10px;
+    width: 100%;
+    border-radius: 25px;
+    top: 0
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content.reveal {
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    scale: .7;
+    overflow: hidden;
+    height: 0px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content.reveal.active {
+    opacity: 1;
+    min-height: 104px;
+    height: 100%;
+    scale: 1
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .discord_link_large {
+    font-size: 1.6rem;
+    background-color: #229150;
+    border-radius: 8px;
+    color: #fafafa;
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .discord_avatar_container {
+    position: relative
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .discord_avatar_container .discord_avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .discord_avatar_container .discord_status {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    bottom: 5px;
+    right: 5px;
+    object-fit: cover
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div {
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_link {
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 2px 10px;
+    background-color: #229150;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_name {
+    font-size: 2.2rem;
+    color: var(--nameColor);
+    font-weight: 500;
+    line-height: 1em
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_description {
+    display: flex;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    color: var(--discordDescription);
+    line-height: 1.2em
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_description .high {
+    color: var(--nameColor);
+    font-weight: 500
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_description .description_icon {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-right: 5px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_description span {
+    display: flex;
+    align-items: center;
+    margin-right: 5px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_description span svg {
+    color: #dce7e8
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container div .discord_description span .online_svg {
+    color: #23a559
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .flex_discord .discord_container .discord_content .text_container .img_activity {
+    height: 70px;
+    width: 70px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-left: 10px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: var(--borderRadius);
+    margin-top: 15px;
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    width: 100%
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .avatar_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .avatar_container .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .avatar_container .avatar {
+        width:70px;
+        height: 70px
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .avatar_container .name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 5px;
+    color: var(--nameColor)
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .avatar_container .name {
+        font-size:1.6rem
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .heart_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .heart_container .date_time {
+    font-size: 1.4rem;
+    color: var(--descriptionColor)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .heart_container .svg {
+    font-size: 8rem;
+    color: #c50b2b;
+    animation: heartBeat 1s infinite
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .heart_container .img {
+    height: 80px;
+    width: 80px
+}
+
+@keyframes heartBeat {
+    0%,100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .couple_embed_container .heart_container .time {
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.3em;
+    color: var(--descriptionColor)
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container {
+    font-size: 160%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 400px;
+    color: var(--nameColor);
+    margin-top: 15px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container.reveal {
+    transition: scale 1s,opacity 1s;
+    opacity: 0
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container.reveal.active {
+    opacity: 1
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container strong,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container b {
+    font-weight: bold
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container h1,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container h2,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container h3,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container h4,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container h5,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container img {
+    max-width: 100%
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container li+li {
+    margin-top: 4px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container p,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container blockquote,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container ul,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container ol,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container dl,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container table,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container pre,.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container details {
+    margin-top: 0;
+    margin-bottom: 16px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container ul {
+    padding-left: 40px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container .markdown_content {
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    padding: 10px;
+    width: 100%;
+    border-radius: 25px;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: none;
+    scrollbar-width: none
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container .markdown_content::-webkit-scrollbar {
+    display: none
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container .markdown_content.reveal {
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    scale: .7;
+    overflow: hidden;
+    height: 0px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .markdown_content_container .markdown_content.reveal.active {
+    opacity: 1;
+    min-height: 104px;
+    height: 100%;
+    scale: 1
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper {
+    max-width: 650px;
+    overflow: hidden;
+    margin-top: 16px;
+    height: 200px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper.reveal {
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    scale: .7;
+    overflow: hidden;
+    height: 0px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper.reveal.active {
+    opacity: 1;
+    height: 200px;
+    scale: 1
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .swiper {
+        width:calc(90vw - 15px)
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper .bottom .card {
+    position: relative;
+    min-width: 300px;
+    border-radius: 25px;
+    overflow: hidden;
+    width: 610px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper .bottom .card .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper .bottom .card .bottom-left {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    bottom: 10px;
+    left: 20px;
+    width: 90%;
+    background: rgba(0,0,0,0);
+    z-index: 2
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper .bottom .card .bottom-left .header {
+    font-size: 1.8rem;
+    width: 100%;
+    line-height: 1.3em;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 500
+}
+
+@media(max-width: 768px) {
+    .profile-body-1 .bio-container .bio_content_container .content-container .content .swiper .bottom .card .bottom-left .header {
+        font-size:1.6rem
+    }
+}
+
+.profile-body-1 .bio-container .bio_content_container .content-container .content .swiper .bottom .card .bottom-left .description {
+    font-size: 1.2rem;
+    width: 100%;
+    line-height: 1.3em;
+    color: #b3b3b3;
+    border-radius: 10px
+}
+
+.profile-body-2 {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex
+}
+
+.profile-body-2 canvas {
+    position: fixed;
+    top: 0;
+    left: 0
+}
+
+.profile-body-2 .overlay_audio {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 101%;
+    height: 101%;
+    background-color: rgba(0,0,0,.9);
+    z-index: 800;
+    transition: all .3s ease;
+    animation: .5s;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px)
+}
+
+.profile-body-2 .overlay_audio .text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: #fff;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    width: max-content
+}
+
+.profile-body-2 .background {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-size: cover !important;
+    background-position: 50% !important;
+    z-index: -1
+}
+
+.profile-body-2 .background .noise-effect {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background: rgba(0,0,0,0) url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+    background-repeat: repeat;
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible
+}
+
+.profile-body-2 .background .stars-drop {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: rgba(0,0,0,0);
+    animation: animStar 50s linear infinite
+}
+
+.profile-body-2 .background .stars-drop:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: rgba(0,0,0,0)
+}
+
+.profile-body-2 .background .stars-drop2 {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(0,0,0,0);
+    animation: animStar 100s linear infinite
+}
+
+.profile-body-2 .background .stars-drop2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: rgba(0,0,0,0)
+}
+
+.profile-body-2 .background .stars-drop3 {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(0,0,0,0);
+    animation: animStar 150s linear infinite
+}
+
+.profile-body-2 .background .stars-drop3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: rgba(0,0,0,0)
+}
+
+.profile-body-2 .bio-container {
+    height: max-content;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container {
+        width:95vw
+    }
+}
+
+.profile-body-2 .bio-container.reveal {
+    transition: scale 1s,opacity 1s;
+    opacity: 0
+}
+
+.profile-body-2 .bio-container.reveal.active {
+    opacity: 1
+}
+
+.profile-body-2 .bio-container .bio_content_container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+.profile-body-2 .bio-container .css_content_container {
+    -webkit-backdrop-filter: blur(var(--backgroundBlur));
+    backdrop-filter: blur(var(--backgroundBlur));
+    background: var(--backgroundColor);
+    border-radius: var(--borderRadius);
+    border: var(--border);
+    padding: 35px;
+    width: 100%
+}
+
+.profile-body-2 .bio-container .css_content_container.reveal {
+    transition: scale 1s,opacity 1s;
+    opacity: 0
+}
+
+.profile-body-2 .bio-container .css_content_container.reveal.active {
+    opacity: 1
+}
+
+.profile-body-2 .bio-container .main_content_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.profile-body-2 .bio-container .main_content_container .like_button_container {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    padding: 5px;
+    border-radius: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer
+}
+
+.profile-body-2 .bio-container .main_content_container .like_button_container input:checked+svg {
+    color: #c50b2b
+}
+
+.profile-body-2 .bio-container .main_content_container .like_button_container svg {
+    font-size: 2rem;
+    color: var(--nameColor);
+    margin-right: 5px;
+    transition: .3s
+}
+
+.profile-body-2 .bio-container .main_content_container .like_button_container .count {
+    font-size: 1.4rem;
+    color: var(--nameColor)
+}
+
+.profile-body-2 .bio-container .main_content_container .bio_info {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+@media(max-width: 600px) {
+    .profile-body-2 .bio-container .main_content_container .bio_info {
+        flex-direction:column-reverse
+    }
+}
+
+.profile-body-2 .bio-container .main_content_container .bio_info .bio_view {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    padding: 5px;
+    border-radius: 25px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+.profile-body-2 .bio-container .main_content_container .bio_info .bio_view svg {
+    font-size: 2rem;
+    color: var(--nameColor);
+    margin-right: 5px
+}
+
+.profile-body-2 .bio-container .main_content_container .bio_info .bio_view .seen {
+    font-size: 1.4rem;
+    color: var(--nameColor)
+}
+
+.profile-body-2 .bio-container .main_content_container .img_container {
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.profile-body-2 .bio-container .main_content_container .img_container .img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    color: #1a1a1a
+}
+
+.profile-body-2 .bio-container .main_content_container .img_container .img_effect {
+    position: absolute;
+    width: 120%;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .header {
+    color: var(--nameColor);
+    font-size: 3.6rem;
+    font-weight: 600;
+    text-shadow: var(--nameGlow);
+    margin-left: 8px;
+    outline: none;
+    white-space: nowrap;
+    max-width: 400px;
+    margin-bottom: 3px;
+    line-height: 1.3em
+}
+
+@keyframes shine_effect {
+    0% {
+        background-position: -500%
+    }
+
+    100% {
+        background-position: 500%
+    }
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .header.shine_effect {
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, var(--nameColor), var(--nameColor), #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shine_effect 2s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    text-shadow: unset !important
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .header.rainbow-text {
+    animation: rainbowAnimation 4s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+    background-size: 400% 100%;
+    color: rgba(0,0,0,0);
+    text-shadow: none
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .header .Typewriter__wrapper {
+    max-width: 400px;
+    font-weight: 600;
+    outline: none;
+    text-shadow: var(--nameGlow);
+    font-size: 1em
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container .main_content_container .header-badge-flex .header .Typewriter__wrapper {
+        max-width:none;
+        min-width: 0px
+    }
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .header .Typewriter__cursor {
+    font-weight: 600;
+    text-shadow: var(--nameGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container {
+    display: flex;
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    padding: 6px 10px;
+    line-height: 0;
+    border-radius: 15px;
+    gap: 8px
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container {
+        padding:4px 6px
+    }
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container.singleColor svg {
+    color: var(--badgeColor) !important
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container.badgeGlow svg {
+    filter: var(--badgeGlow) !important
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container .badge_img {
+    width: 20px;
+    height: 20px
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container .badge_img.badgeImgGlow {
+    filter: var(--badgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg {
+    font-size: 2rem;
+    outline: none;
+    border: none
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#premium {
+    color: #c3fffd;
+    filter: var(--premiumBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#verify {
+    color: #009fff;
+    filter: var(--verifyBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#bughunter {
+    color: #37ff74;
+    filter: var(--bugHunterBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#og {
+    color: #8a2be2;
+    filter: var(--ogBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#developer {
+    color: #4caf50;
+    filter: var(--developerBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#staff {
+    color: #b2b6f6;
+    filter: var(--staffBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#boost {
+    color: #db3838;
+    filter: var(--boostBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#valentine {
+    color: #c50b2b;
+    filter: var(--valentineBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .header-badge-flex .badge_container svg#unleash {
+    color: #2ea967;
+    filter: var(--unleashBadgeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .bio_description {
+    font-size: 1.6rem;
+    line-height: 1.4em;
+    color: var(--descriptionColor);
+    text-shadow: var(--descriptionGlow);
+    max-width: 400px;
+    word-wrap: break-word;
+    margin-top: 10px
+}
+
+.profile-body-2 .bio-container .main_content_container .bio_description .Typewriter__wrapper {
+    max-width: 400px;
+    font-size: 1em;
+    outline: none;
+    white-space: nowrap;
+    text-shadow: var(--descriptionGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .bio_description .Typewriter__cursor {
+    text-shadow: var(--descriptionGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .location_container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+.profile-body-2 .bio-container .main_content_container .location_container svg {
+    font-size: 2rem;
+    color: var(--nameColor)
+}
+
+.profile-body-2 .bio-container .main_content_container .location_container .text {
+    font-size: 1.4rem;
+    color: var(--nameColor)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--discordBackground);
+    border: 2px solid var(--discordBorder);
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    padding: 6px 8px;
+    cursor: pointer;
+    background: none;
+    border-radius: 5px;
+    filter: var(--iconGlow) !important;
+    transition: scale .3s ease
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item:hover {
+    scale: 1.1
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item .img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: var(--customizeIconGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item.discord {
+    transition: .4s
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item.discord:hover {
+    background-color: rgba(51,51,51,.2);
+    border-radius: 50px
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item .svg_text {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-left: 5px;
+    font-weight: 500
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item.singleColor svg {
+    color: var(--iconColor) !important
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item.singleColor .svg_text {
+    color: var(--iconColor) !important
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg {
+    color: #000
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#snapChatSvg {
+    color: #fffc00;
+    filter: var(--snapChatGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#instagramSvg {
+    color: #f472b6;
+    filter: var(--instagramGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#youtubeSvg {
+    color: red;
+    filter: var(--youtubeGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#redditSvg {
+    color: #fe4000;
+    filter: var(--redditGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#tiktokSvg {
+    color: #fff;
+    filter: var(--tiktokGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#telegramSvg {
+    color: #2aabee;
+    filter: var(--telegramGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#facebookSvg {
+    color: #2563eb;
+    filter: var(--facebookGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#spotifySvg {
+    color: #1ed760;
+    filter: var(--spotifyGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#steamSvg {
+    color: #fff;
+    filter: var(--steamGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#discordSvg {
+    color: #5865f2;
+    filter: var(--discordGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#riotSvg {
+    color: #d1363a;
+    filter: var(--riotGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#pinterestSvg {
+    color: #e4001c;
+    filter: var(--pinterestGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#emailSvg {
+    color: #fff;
+    filter: var(--emailGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#robloxSvg {
+    color: #fff;
+    filter: var(--robloxGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#paypalSvg {
+    color: #003087;
+    filter: var(--paypalGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#ethSvg {
+    color: #8c8c8c;
+    filter: var(--ethGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#btcSVG {
+    color: #ef8e19;
+    filter: var(--btcGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#ltcSvg {
+    color: #325a98;
+    filter: var(--ltcGlow)
+}
+
+.profile-body-2 .bio-container .main_content_container .svg_container .svg_item svg#soundcloudSvg {
+    color: #ff4700;
+    filter: var(--soundcloudGlow)
+}
+
+.profile-body-2 .bio-container .second_embed_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container .second_embed_container {
+        flex-direction:column
+    }
+}
+
+.profile-body-2 .bio-container .second_embed_container .border {
+    content: "";
+    border: 1px solid var(--borderColor)
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container {
+    display: flex;
+    justify-content: center;
+    min-width: 280px;
+    width: 100%
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container .second_embed_container .discord_container {
+        width:100%;
+        min-width: unset
+    }
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px;
+    width: 100%;
+    border-radius: 25px;
+    top: 0
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content.reveal {
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    scale: .7;
+    overflow: hidden;
+    height: 0px
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content.reveal.active {
+    opacity: 1;
+    height: 100%;
+    scale: 1
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .discord_link_large {
+    font-size: 1.6rem;
+    background-color: #229150;
+    border-radius: 8px;
+    color: #fafafa;
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .discord_avatar_container {
+    position: relative
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .discord_avatar_container .discord_avatar {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .discord_avatar_container .discord_status {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    bottom: 5px;
+    right: 5px;
+    object-fit: cover
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div {
+    white-space: nowrap;
+    overflow: hidden
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div .discord_name {
+    font-size: 2.2rem;
+    color: var(--nameColor);
+    font-weight: 500;
+    line-height: 1em
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div .discord_description {
+    display: flex;
+    margin-top: 5px;
+    font-size: 1.4rem;
+    color: var(--discordDescription);
+    line-height: 1.2em
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div .discord_description .high {
+    color: var(--nameColor);
+    font-weight: 500
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div .discord_description .description_icon {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-right: 5px
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div .discord_description span {
+    display: flex;
+    align-items: center;
+    margin-right: 5px
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div .discord_description span svg {
+    color: #dce7e8
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container div .discord_description span .online_svg {
+    color: #23a559
+}
+
+.profile-body-2 .bio-container .second_embed_container .discord_container .discord_content .text_container .img_activity {
+    height: 70px;
+    width: 70px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-left: 10px
+}
+
+.profile-body-2 .bio-container .markdown_content_container {
+    font-size: 160%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 400px;
+    color: var(--nameColor);
+    overflow-y: auto;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 20px
+}
+
+.profile-body-2 .bio-container .markdown_content_container strong,.profile-body-2 .bio-container .markdown_content_container b {
+    font-weight: bold
+}
+
+.profile-body-2 .bio-container .markdown_content_container img {
+    max-width: 100%
+}
+
+.profile-body-2 .bio-container .markdown_content_container h1,.profile-body-2 .bio-container .markdown_content_container h2,.profile-body-2 .bio-container .markdown_content_container h3,.profile-body-2 .bio-container .markdown_content_container h4,.profile-body-2 .bio-container .markdown_content_container h5,.profile-body-2 .bio-container .markdown_content_container h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25
+}
+
+.profile-body-2 .bio-container .markdown_content_container li+li {
+    margin-top: 4px
+}
+
+.profile-body-2 .bio-container .markdown_content_container p,.profile-body-2 .bio-container .markdown_content_container blockquote,.profile-body-2 .bio-container .markdown_content_container ul,.profile-body-2 .bio-container .markdown_content_container ol,.profile-body-2 .bio-container .markdown_content_container dl,.profile-body-2 .bio-container .markdown_content_container table,.profile-body-2 .bio-container .markdown_content_container pre,.profile-body-2 .bio-container .markdown_content_container details {
+    margin-top: 0;
+    margin-bottom: 16px
+}
+
+.profile-body-2 .bio-container .markdown_content_container::-webkit-scrollbar {
+    display: none
+}
+
+.profile-body-2 .bio-container .markdown_content_container ul {
+    padding-left: 40px
+}
+
+.profile-body-2 .bio-container .markdown_content_container .markdown_content {
+    width: 100%;
+    top: 0;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+.profile-body-2 .bio-container .markdown_content_container .markdown_content::-webkit-scrollbar {
+    display: none
+}
+
+.profile-body-2 .bio-container .markdown_content_container .markdown_content.reveal {
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    scale: .7;
+    overflow: hidden;
+    height: 0px
+}
+
+.profile-body-2 .bio-container .markdown_content_container .markdown_content.reveal.active {
+    opacity: 1;
+    min-height: 104px;
+    height: 100%;
+    scale: 1
+}
+
+.profile-body-2 .bio-container .audio_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-target {
+    border: none;
+    box-shadow: unset;
+    background-color: #555
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-connect {
+    background-color: var(--audioControlColor)
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-base,.profile-body-2 .bio-container .audio_container .noUi-connects {
+    z-index: unset
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-connects {
+    background-color: var(--audioControlRgba05)
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-horizontal {
+    height: 8px
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-handle {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 16px !important;
+    height: 16px !important;
+    box-shadow: unset;
+    border: none;
+    top: -4px !important;
+    right: -12px !important;
+    cursor: pointer
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-handle::after {
+    display: none
+}
+
+.profile-body-2 .bio-container .audio_container .noUi-handle::before {
+    display: none
+}
+
+.profile-body-2 .bio-container .audio_container .name {
+    font-size: 2.2rem;
+    color: var(--audioControlColor);
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1em;
+    text-align: center
+}
+
+.profile-body-2 .bio-container .audio_container .flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%
+}
+
+.profile-body-2 .bio-container .audio_container .flex .duration {
+    font-size: 1.4rem;
+    color: var(--audioControlColor);
+    width: 20px
+}
+
+.profile-body-2 .bio-container .audio_container .flex .slideTrack {
+    flex: 1;
+    margin: 0 10px;
+    cursor: pointer
+}
+
+.profile-body-2 .bio-container .audio_container .flex button {
+    font-size: 3.6rem;
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 0;
+    width: max-content
+}
+
+.profile-body-2 .bio-container .audio_container .flex button svg {
+    color: var(--audioControlColor);
+    cursor: pointer
+}
+
+.profile-body-2 .bio-container .audio_container .audio_control {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    line-height: 0;
+    width: 24px;
+    border-radius: 10px;
+    z-index: 5;
+    transition: .5s;
+    gap: 10px;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.profile-body-2 .bio-container .audio_container .audio_control.revealAudioLink {
+    transition: .5s;
+    opacity: 0
+}
+
+.profile-body-2 .bio-container .audio_container .audio_control.revealAudioLink.active {
+    opacity: 1
+}
+
+.profile-body-2 .bio-container .audio_container .audio_control:hover {
+    width: 120px;
+    padding-right: 25px
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container .audio_container .audio_control:hover {
+        width:24px;
+        padding-right: 0
+    }
+}
+
+.profile-body-2 .bio-container .audio_container .audio_control .volumeIcon {
+    font-size: 2.4rem;
+    color: var(--audioControlColor)
+}
+
+.profile-body-2 .bio-container .audio_container .audio_control .volumeIcon.active {
+    animation: bounce .3s
+}
+
+.profile-body-2 .bio-container .audio_container .audio_control .volumeIcon.unactive {
+    animation: bounceRepeat .3s
+}
+
+.profile-body-2 .bio-container .link_container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center
+}
+
+.profile-body-2 .bio-container .link_container .link_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px
+}
+
+.profile-body-2 .bio-container .link_container .link_item:hover .link_arrow {
+    transform: translateX(5px)
+}
+
+.profile-body-2 .bio-container .link_container .link_item .item_flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    overflow: hidden
+}
+
+.profile-body-2 .bio-container .link_container .link_item .img {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    object-fit: cover
+}
+
+.profile-body-2 .bio-container .link_container .link_item .center_content .header {
+    font-size: 1.8rem;
+    color: var(--nameColor);
+    font-weight: 500;
+    line-height: 1.3em
+}
+
+.profile-body-2 .bio-container .link_container .link_item .center_content .description {
+    font-size: 1.4rem;
+    color: var(--discordDescription);
+    line-height: 1.3em
+}
+
+.profile-body-2 .bio-container .link_container .link_item .link_arrow {
+    flex-shrink: 0;
+    font-size: 3rem;
+    color: var(--nameColor);
+    transition: all .3s ease
+}
+
+.profile-body-2 .bio-container .couple_embed_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%
+}
+
+.profile-body-2 .bio-container .couple_embed_container .avatar_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0
+}
+
+.profile-body-2 .bio-container .couple_embed_container .avatar_container .avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container .couple_embed_container .avatar_container .avatar {
+        width:70px;
+        height: 70px
+    }
+}
+
+.profile-body-2 .bio-container .couple_embed_container .avatar_container .name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 5px;
+    color: var(--nameColor)
+}
+
+@media(max-width: 768px) {
+    .profile-body-2 .bio-container .couple_embed_container .avatar_container .name {
+        font-size:1.6rem
+    }
+}
+
+.profile-body-2 .bio-container .couple_embed_container .heart_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden
+}
+
+.profile-body-2 .bio-container .couple_embed_container .heart_container .date_time {
+    font-size: 1.4rem;
+    color: var(--descriptionColor)
+}
+
+.profile-body-2 .bio-container .couple_embed_container .heart_container .svg {
+    font-size: 8rem;
+    color: #c50b2b;
+    animation: heartBeat 1s infinite
+}
+
+.profile-body-2 .bio-container .couple_embed_container .heart_container .img {
+    width: 80px;
+    height: 80px
+}
+
+@keyframes heartBeat {
+    0%,100% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.1)
+    }
+}
+
+.profile-body-2 .bio-container .couple_embed_container .heart_container .time {
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.3em;
+    color: var(--descriptionColor)
+}
+
+/*# sourceMappingURL=bio.css.map */

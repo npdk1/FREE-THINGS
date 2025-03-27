@@ -1,0 +1,1518 @@
+@import '../Partial/variable';
+@import '../Partial/mixin';
+@import '../Partial/base';
+// 
+.profile-body-1 {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .overlay_audio {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 90%);
+        z-index: 800;
+        transition: all 0.3s ease;
+        animation: 0.5s;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        .text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: $text;
+            font-weight: 500;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            width: max-content;
+        }
+    }
+    .audio_control {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        line-height: 0;
+        width: 58px;
+        border-radius: 10px;
+        background-color: rgb(15, 15, 15, 0.2);
+        z-index: 5;
+        padding: 15px;
+        transition: 0.5s;
+        gap: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        &.revealAudio {
+            transition: 0.5s;
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+        &:hover {
+            width: 180px;
+            padding-right: 25px;
+        }
+        .volumeIcon {
+            font-size: 2.8rem;
+            color: var(--audioControlColor);
+            &.active {
+                animation: bounce .3s;
+            }
+            &.unactive {
+                animation: bounceRepeat .3s;
+            }
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+
+            .noUi-target {
+                border: none;
+                box-shadow: unset;
+                background-color: #555;
+            }
+            
+            .noUi-connect {
+                background-color: var(--audioControlColor);
+            }
+            
+            .noUi-base, 
+            .noUi-connects {
+                z-index: unset;
+            }
+
+            .noUi-connects {
+                background-color: var(--audioControlRgba05);
+            }
+            
+            .noUi-horizontal {
+                height: 8px;
+            }
+            
+            // Tùy chỉnh dấu trượt
+            .noUi-handle {
+                background-color: #fff;
+                border-radius: 50%;
+                width: 16px !important;
+                height: 16px !important;
+                box-shadow: unset;
+                border: none;
+                top: -4px !important;
+                right: -12px !important;
+                cursor: pointer;
+            
+                &::after {
+                    display: none;
+                }
+            
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .background {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-size: cover !important;
+        background-position: 50% !important;
+        z-index: -1;
+        .noise-effect{
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+            background-repeat: repeat;
+            animation: bg-animation .2s infinite;
+            opacity: .9;
+            visibility: visible;
+        }
+        .stars-drop {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            animation: animStar 50s linear infinite;
+        
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 2000px;
+                width: 1px;
+                height: 1px;
+                background: transparent;
+            }
+        }
+        
+        .stars-drop2 {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            animation: animStar 100s linear infinite;
+        
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 2000px;
+                width: 2px;
+                height: 2px;
+                background: transparent;
+            }
+        }
+        
+        .stars-drop3 {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            animation: animStar 150s linear infinite;
+        
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 2000px;
+                width: 3px;
+                height: 3px;
+                background: transparent;
+            }
+        }
+    }
+    // #star-container {
+    // }
+    // 
+    .header-header {
+        display: none;
+    }
+    .footer_container {
+        display: none;
+    }
+    .bio-container {
+        // position: absolute;
+        // top: 0;
+        // right: 0;
+        // left: 0;
+        height: max-content;
+        width: var(--bioWidth);
+        max-width: 730px;
+        margin: auto;
+        border-radius: 25px;
+        overflow: hidden;
+        -webkit-backdrop-filter: blur(var(--backgroundBlur));
+        backdrop-filter: blur(var(--backgroundBlur));
+        background: var(--backgroundColor);
+        transform-style: preserve-3d;
+        &.reveal {
+            transition: scale 1s, opacity 1s;
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+        @include respond-to(medium){
+            width: 95vw;
+        }
+        // 
+        .bio_view {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            svg {
+                font-size: 2rem;
+                color: var(--nameColor);
+                margin-right: 5px;
+            }
+            .seen {
+                font-size: 1.4rem;
+                color: var(--nameColor);
+            }
+        }
+        .content-container {
+            position: relative;
+            width: 100%;
+            padding: 40px;
+            overflow: hidden;
+            @include respond-to(medium){
+                padding: 15px 15px 40px 15px;
+            }
+            // 
+            .content {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: 650px;
+                // 
+                .top {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    &.reveal {
+                        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                        opacity: 0;
+                        overflow: hidden;
+                        height: 0px;
+                        &.active {
+                            opacity: 1;
+                            height: 160px;
+                            overflow: unset;
+                        }
+                    }
+                    // 
+                    .img_container {
+                        position: relative;
+                        .img {
+                            width: 160px;
+                            height: 160px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            color: $bg;
+                            @include respond-to(medium){
+                                width: 120px;
+                                height: 120px;
+                            }
+                        }
+                        .img_effect {
+                            position: absolute;
+                            width: 120%;
+                            // height: 192px;
+                            top: 48%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            // @include respond-to(medium){
+                            //     width: 160px;
+                            //     height: 160px;
+                            // }
+                        }
+                    }
+                    .flex-column {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6px;
+                        @include respond-to(medium){
+                            width: 100%;
+                        }
+                        .flex {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            gap: 5px;
+                            .header {
+                                color: var(--nameColor);
+                                font-size: 3.6rem;
+                                font-weight: 600;
+                                text-shadow: var(--nameGlow);
+                                margin-left: 8px;
+                                outline: none;
+                                white-space: nowrap;
+                                max-width: 400px;
+                                margin-bottom: 3px;
+                                line-height: 1.3em;
+                                @keyframes shine_effect {
+                                    0% {
+                                        background-position: -500%;
+                                    }
+                                    100% {
+                                        background-position: 500%;
+                                    }
+                                }
+                                &.shine_effect {
+                                    margin-right: 10px;
+                                    position: relative;
+                                    overflow: hidden;
+                                    background: linear-gradient(90deg, #000, var(--nameColor), var(--nameColor), #000);
+                                    background-repeat: no-repeat;
+                                    background-size: 80%;
+                                    animation: shine_effect 2s linear infinite;
+                                    -webkit-background-clip: text;
+                                    background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                    text-shadow: unset !important;
+                                }
+                                &.rainbow-text {
+                                    animation: rainbowAnimation 4s linear infinite;
+                                    -webkit-background-clip: text;
+                                    background-clip: text;
+                                    background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+                                    background-size: 400% 100%;
+                                    color: transparent;
+                                    text-shadow: none;
+                                }
+                                @include respond-to(medium){
+                                    font-size: 2.4rem;
+                                    max-width: none;
+                                    min-width: 0px;
+                                }
+                                .Typewriter__wrapper {
+                                    max-width: 400px;
+                                    font-weight: 600;
+                                    outline: none;
+                                    text-shadow: var(--nameGlow);
+                                    font-size: 1em;
+                                    @include respond-to(medium){
+                                        max-width: none;
+                                        min-width: 0px;
+                                    }
+                                }
+                                .Typewriter__cursor {
+                                    font-weight: 600;
+                                    text-shadow: var(--nameGlow);
+                                }
+                            }
+                            .badge_container {
+                                display: flex;
+                                background-color: var(--discordBackground);
+                                border: 2px solid var(--discordBorder);
+                                padding: 6px 10px;
+                                line-height: 0;
+                                border-radius: 15px;
+                                gap: 8px;
+                                @include respond-to('medium'){
+                                    padding: 4px 6px;
+                                }
+                                &.singleColor svg {
+                                    color: var(--badgeColor) !important;
+                                }
+                                &.badgeGlow svg {
+                                    filter: var(--badgeGlow) !important;
+                                }
+                                .badge_img {
+                                    width: 20px;
+                                    height: 20px;
+                                    @include respond-to(medium){
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                    &.badgeImgGlow {
+                                        filter: var(--badgeGlow);
+                                    }
+                                }
+                                svg {
+                                    font-size: 2rem;
+                                    outline: none;
+                                    border: none;
+                                    @include respond-to(medium){
+                                        font-size: 1.6rem;
+                                    }
+                                    &#premium { 
+                                        color: #c3fffd; 
+                                        filter: var(--premiumBadgeGlow);
+                                    }
+                                    &#verify { 
+                                        color: #009fff; 
+                                        filter: var(--verifyBadgeGlow);
+                                    }
+                                    &#bughunter { 
+                                        color: #37ff74; 
+                                        filter: var(--bugHunterBadgeGlow);
+                                    }
+                                    &#og { 
+                                        color: #8A2BE2; 
+                                        filter: var(--ogBadgeGlow);
+                                    }
+                                    &#developer { 
+                                        color: #4CAF50; 
+                                        filter: var(--developerBadgeGlow);
+                                    }
+                                    &#staff { 
+                                        color: #b2b6f6; 
+                                        filter: var(--staffBadgeGlow);
+                                    }
+                                }
+                            }
+                        }
+                        .bio_description {
+                            font-size: 1.6rem;
+                            line-height: 1.4em;
+                            color: var(--descriptionColor);
+                            text-shadow: var(--descriptionGlow);
+                            max-width: 400px;
+                            word-wrap: break-word;
+                            outline: none;
+                            margin-left: 8px;
+                            .Typewriter__wrapper {
+                                max-width: 400px;
+                                font-size: 1em;
+                                outline: none;
+                                white-space: nowrap;
+                                text-shadow: var(--descriptionGlow);
+                            }
+                            .Typewriter__cursor {
+                                text-shadow: var(--descriptionGlow);
+                            }
+                        }
+                        .svg_container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            .svg_item {
+                                display: flex;
+                                align-items: center;
+                                font-size: 2.2rem;
+                                padding: 6px 8px;
+                                cursor: pointer;
+                                background: none;
+                                border-radius: 5px;
+                                filter: var(--iconGlow) !important;
+                                transition: scale 0.3s ease;
+                                &:hover {
+                                    scale: 1.1;
+                                }
+                                .img {
+                                    width: 22px;
+                                    height: 22px;
+                                    object-fit: cover;
+                                    border-radius: 5px;
+                                    filter: var(--customizeIconGlow);
+                                }
+                                &.discord {
+                                    transition: 0.4s;
+                                    &:hover {
+                                        background-color: rgb(51, 51, 51, 0.2);
+                                        border-radius: 50px;
+                                    }
+                                }
+                                .svg_text {
+                                    font-size: 1.4rem;
+                                    color: $text;
+                                    margin-left: 5px;
+                                    font-weight: 500 ; 
+                                }
+                                &.singleColor svg {
+                                    color: var(--iconColor) !important;
+                                }
+                                &.singleColor .svg_text {
+                                    color: var(--iconColor) !important;
+                                }
+                                svg {
+                                    color: #000;
+                                    &#snapChatSvg {
+                                        color: #FFFC00;
+                                        filter: var(--snapChatGlow);
+                                    }
+                                    &#instagramSvg {
+                                        color: #f472b6;
+                                        filter: var(--instagramGlow);
+                                    }
+                                    &#youtubeSvg {
+                                        color: #FF0000;
+                                        filter: var(--youtubeGlow);
+                                    }
+                                    &#redditSvg {
+                                        color: #FE4000;
+                                        filter: var(--redditGlow);
+                                    }
+                                    &#tiktokSvg {
+                                        color: #fff;
+                                        filter: var(--tiktokGlow);
+                                    }
+                                    &#telegramSvg {
+                                        color: #2aabee;
+                                        filter: var(--telegramGlow);
+                                    }
+                                    &#facebookSvg {
+                                        color: #2563eb;
+                                        filter: var(--facebookGlow);
+                                    }
+                                    &#spotifySvg {
+                                        color: #1ed760;
+                                        filter: var(--spotifyGlow);
+                                    }
+                                    &#steamSvg {
+                                        color: #fff;
+                                        filter: var(--steamGlow);
+                                    }
+                                    &#discordSvg {
+                                        color: #5865f2;
+                                        filter: var(--discordGlow);
+                                    }
+                                    &#riotSvg {
+                                        color: #d1363a;
+                                        filter: var(--riotGlow);
+                                    }
+                                    &#pinterestSvg {
+                                        color: #e4001c;
+                                        filter: var(--pinterestGlow);
+                                    }
+                                    &#emailSvg {
+                                        color: #fff;
+                                        filter: var(--emailGlow);
+                                    }
+                                    &#robloxSvg {
+                                        color: #fff;
+                                        filter: var(--robloxGlow);
+                                    }
+                                    &#paypalSvg {
+                                        color: #003087;
+                                        filter: var(--paypalGlow);
+                                    }
+                                    &#soundcloudSvg {
+                                        color: #FF4700;
+                                        filter: var(--soundcloudGlow);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .flex_discord {
+                    display: flex;
+                    gap: 10px;
+                    margin-top: 16px;
+                    @include respond-to(medium){
+                        flex-direction: column;
+                    }
+                    .discord_container {
+                        display: flex;
+                        justify-content: center;
+                        flex: 1 1 50%;
+                        min-width: 280px;
+                        width: 0;
+                        @include respond-to(medium){
+                            width: 100%;
+                            min-width: unset;
+                        }
+                        .discord_content {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            background-color: var(--discordBackground);
+                            border: 2px solid var(--discordBorder);
+                            padding: 10px;
+                            width: 100%;
+                            border-radius: 25px;
+                            top: 0;
+                            &.reveal {
+                                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                                opacity: 0;
+                                scale: 0.7;
+                                overflow: hidden;
+                                height: 0px;
+                                &.active {
+                                    opacity: 1;
+                                    min-height: 104px;
+                                    height: 100%;
+                                    scale: 1;
+                                }
+                            }
+                            .discord_link_large {
+                                font-size: 1.6rem;
+                                background-color: #229150;
+                                border-radius: 8px;
+                                color: #fafafa;
+                                display: flex;
+                                justify-content: center;
+                                padding: 10px 15px;
+                                text-decoration: none;
+                                cursor: pointer;
+                            }
+                            .discord_avatar_container {
+                                position: relative;
+                                .discord_avatar {
+                                    height: 70px;
+                                    width: 70px;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                }
+                                .discord_status {
+                                    position: absolute;
+                                    width: 17px;
+                                    height: 17px;
+                                    bottom: 5px;
+                                    right: 5px;
+                                    object-fit: cover;
+                                }
+                            }
+                            .text_container {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                width: 100%;
+                                div {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    .discord_link {
+                                        font-size: 1.2rem;
+                                        color: $text;
+                                        padding: 2px 10px;
+                                        background-color: #229150;
+                                        border-radius: 8px;
+                                        cursor: pointer;
+                                    }
+                                    .discord_name {
+                                        font-size: 2.2rem;
+                                        color: var(--nameColor);
+                                        font-weight: 500;
+                                        line-height: 1em;
+                                    }
+                                    .discord_description {
+                                        display: flex;
+                                        margin-top: 5px;
+                                        font-size: 1.4rem;
+                                        color: var(--discordDescription);
+                                        line-height: 1.2em;
+                                        .high {
+                                            color: var(--nameColor);
+                                            font-weight: 500;
+                                        }
+                                        .description_icon {
+                                            width: 20px;
+                                            height: 20px;
+                                            object-fit: cover;
+                                            margin-right: 5px;
+                                        }
+                                        span {
+                                            display: flex;
+                                            align-items: center;
+                                            margin-right: 5px;
+                                            svg {
+                                                color: #DCE7E8;
+                                            }
+                                            .online_svg {
+                                                color: #23a559;
+                                            }
+                                        }
+                                    }
+                                }
+                                .img_activity {
+                                    height: 70px;
+                                    width: 70px;
+                                    border-radius: 15px;
+                                    object-fit: cover;
+                                    margin-left: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .swiper {
+                    max-width: 650px;
+                    overflow: hidden;
+                    margin-top: 16px;
+                    height: 200px;
+                    &.reveal {
+                        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                        opacity: 0;
+                        scale: 0.7;
+                        overflow: hidden;
+                        height: 0px;
+                        &.active {
+                            opacity: 1;
+                            height: 200px;
+                            scale: 1;
+                        }
+                    }
+                    @include respond-to(medium){
+                        width: calc(90vw - 15px);
+                    }
+                    .bottom {
+                        // 
+                        .card {
+                            position: relative;
+                            min-width: 300px;
+                            border-radius: 25px;
+                            overflow: hidden;
+                            width: 610px;
+                            @include respond-to(medium){
+                            }
+                            // &::before {
+                            //     content: "";
+                            //     position: absolute;
+                            //     top: 0;
+                            //     left: 0;
+                            //     right: 0;
+                            //     bottom: 0;
+                            //     background: linear-gradient(to top, rgba(10, 10, 10, 0.8), rgba(255, 255, 255, 0));
+                            //     z-index: 1;
+                            // }
+                            .img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: 25px;
+                            }
+                            .bottom-left {
+                                position: absolute;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px;
+                                bottom: 10px;
+                                left: 20px;
+                                width: 90%;
+                                background: transparent;
+                                z-index: 2;
+                                // 
+                                .header {
+                                    font-size: 1.8rem;
+                                    width: 100%;
+                                    line-height: 1.3em;
+                                    color: $text;
+                                    border-radius: 10px;
+                                    font-weight: 500;
+                                    @include respond-to('medium'){
+                                        font-size: 1.6rem;
+                                    }
+                                }
+                                .description {
+                                    font-size: 1.2rem;
+                                    width: 100%;
+                                    line-height: 1.3em;
+                                    color: $des_text;
+                                    border-radius: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.profile-body-2 {
+    overflow: hidden;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .overlay_audio {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 90%);
+        z-index: 800;
+        transition: all 0.3s ease;
+        animation: 0.5s;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        .text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: $text;
+            font-weight: 500;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            width: max-content;
+        }
+    }
+    .background {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-size: cover !important;
+        background-position: 50% !important;
+        z-index: -1;
+        .noise-effect{
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+            background-repeat: repeat;
+            animation: bg-animation .2s infinite;
+            opacity: .9;
+            visibility: visible;
+        }
+        .stars-drop {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            animation: animStar 50s linear infinite;
+        
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 2000px;
+                width: 1px;
+                height: 1px;
+                background: transparent;
+            }
+        }
+        
+        .stars-drop2 {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            animation: animStar 100s linear infinite;
+        
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 2000px;
+                width: 2px;
+                height: 2px;
+                background: transparent;
+            }
+        }
+        
+        .stars-drop3 {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            animation: animStar 150s linear infinite;
+        
+            &:after {
+                content: " ";
+                position: absolute;
+                top: 2000px;
+                width: 3px;
+                height: 3px;
+                background: transparent;
+            }
+        }
+    }
+    .bio-container {
+        // position: absolute;
+        // top: 0;
+        // right: 0;
+        // left: 0;
+        height: max-content;
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        @include respond-to(medium){
+            width: 95vw;
+        }
+        &.reveal {
+            transition: scale 1s, opacity 1s;
+            opacity: 0;
+
+            &.active {
+                opacity: 1;
+            }
+        }
+        .css_content_container {
+            -webkit-backdrop-filter: blur(var(--backgroundBlur));
+            backdrop-filter: blur(var(--backgroundBlur));
+            background: var(--backgroundColor);
+            border-radius: var(--borderRadius);
+            border: var(--border);
+            padding: 35px;
+            &.reveal {
+                transition: scale 1s, opacity 1s;
+                opacity: 0;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+        .main_content_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // transform-style: preserve-3d;
+            .bio_info {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                .bio_view {
+                    display: flex;
+                    align-items: center;
+                    z-index: 1;
+                    background-color: var(--discordBackground);
+                    border: 2px solid var(--discordBorder);
+                    padding: 5px;
+                    border-radius: 25px;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    user-select: none;
+                    svg {
+                        font-size: 2rem;
+                        color: var(--nameColor);
+                        margin-right: 5px;
+                    }
+                    .seen {
+                        font-size: 1.4rem;
+                        color: var(--nameColor);
+                    }
+                }
+            }
+            .img_container {
+                position: absolute;
+                top: -70px;
+                left: 50%;
+                transform: translateX(-50%);
+                .img {
+                    width: 140px;
+                    height: 140px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    color: $bg;
+                }
+                .img_effect {
+                    position: absolute;
+                    width: 120%;
+                    top: 48%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            .header-badge-flex {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 10px;
+                .header {
+                    color: var(--nameColor);
+                    font-size: 3.6rem;
+                    font-weight: 600;
+                    text-shadow: var(--nameGlow);
+                    margin-left: 8px;
+                    outline: none;
+                    white-space: nowrap;
+                    max-width: 400px;
+                    margin-bottom: 3px;
+                    line-height: 1.3em;
+                    @keyframes shine_effect {
+                        0% {
+                            background-position: -500%;
+                        }
+                        100% {
+                            background-position: 500%;
+                        }
+                    }
+                    &.shine_effect {
+                        margin-right: 10px;
+                        position: relative;
+                        overflow: hidden;
+                        background: linear-gradient(90deg, #000, var(--nameColor), var(--nameColor), #000);
+                        background-repeat: no-repeat;
+                        background-size: 80%;
+                        animation: shine_effect 2s linear infinite;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        text-shadow: unset !important;
+                    }
+                    &.rainbow-text {
+                        animation: rainbowAnimation 4s linear infinite;
+                        -webkit-background-clip: text;
+                        background-clip: text;
+                        background-image: linear-gradient(90deg, violet, indigo, blue, green, yellow, orange, red);
+                        background-size: 400% 100%;
+                        color: transparent;
+                        text-shadow: none;
+                    }
+                    @include respond-to(medium){
+                        font-size: 2.4rem;
+                        max-width: none;
+                        min-width: 0px;
+                    }
+                    .Typewriter__wrapper {
+                        max-width: 400px;
+                        font-weight: 600;
+                        outline: none;
+                        text-shadow: var(--nameGlow);
+                        font-size: 1em;
+                        @include respond-to(medium){
+                            max-width: none;
+                            min-width: 0px;
+                        }
+                    }
+                    .Typewriter__cursor {
+                        font-weight: 600;
+                        text-shadow: var(--nameGlow);
+                    }
+                }
+                .badge_container {
+                    display: flex;
+                    background-color: var(--discordBackground);
+                    border: 2px solid var(--discordBorder);
+                    padding: 6px 10px;
+                    line-height: 0;
+                    border-radius: 15px;
+                    gap: 8px;
+                    @include respond-to('medium'){
+                        padding: 4px 6px;
+                    }
+                    &.singleColor svg {
+                        color: var(--badgeColor) !important;
+                    }
+                    &.badgeGlow svg {
+                        filter: var(--badgeGlow) !important;
+                    }
+                    .badge_img {
+                        width: 20px;
+                        height: 20px;
+                        @include respond-to(medium){
+                            width: 20px;
+                            height: 20px;
+                        }
+                        &.badgeImgGlow {
+                            filter: var(--badgeGlow);
+                        }
+                    }
+                    svg {
+                        font-size: 2rem;
+                        outline: none;
+                        border: none;
+                        @include respond-to(medium){
+                            font-size: 1.6rem;
+                        }
+                        &#premium { 
+                            color: #c3fffd; 
+                            filter: var(--premiumBadgeGlow);
+                        }
+                        &#verify { 
+                            color: #009fff; 
+                            filter: var(--verifyBadgeGlow);
+                        }
+                        &#bughunter { 
+                            color: #37ff74; 
+                            filter: var(--bugHunterBadgeGlow);
+                        }
+                        &#og { 
+                            color: #8A2BE2; 
+                            filter: var(--ogBadgeGlow);
+                        }
+                        &#developer { 
+                            color: #4CAF50; 
+                            filter: var(--developerBadgeGlow);
+                        }
+                        &#staff { 
+                            color: #b2b6f6; 
+                            filter: var(--staffBadgeGlow);
+                        }
+                    }
+                }
+            }
+            .bio_description {
+                font-size: 1.6rem;
+                line-height: 1.4em;
+                color: var(--descriptionColor);
+                text-shadow: var(--descriptionGlow);
+                max-width: 400px;
+                word-wrap: break-word;
+                margin-bottom: 20px;
+                .Typewriter__wrapper {
+                    max-width: 400px;
+                    font-size: 1em;
+                    outline: none;
+                    white-space: nowrap;
+                    text-shadow: var(--descriptionGlow);
+                }
+                .Typewriter__cursor {
+                    text-shadow: var(--descriptionGlow);
+                }
+            }
+            .svg_container {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                background-color: var(--discordBackground);
+                border: 2px solid var(--discordBorder);
+                border-radius: 15px;
+                padding: 10px;
+                width: 100%;
+                .svg_item {
+                    display: flex;
+                    align-items: center;
+                    font-size: 3rem;
+                    padding: 6px 8px;
+                    cursor: pointer;
+                    background: none;
+                    border-radius: 5px;
+                    filter: var(--iconGlow) !important;
+                    transition: scale 0.3s ease;
+                    &:hover {
+                        scale: 1.1;
+                    }
+                    .img {
+                        width: 30px;
+                        height: 30px;
+                        object-fit: cover;
+                        border-radius: 5px;
+                        filter: var(--customizeIconGlow);
+                    }
+                    &.discord {
+                        transition: 0.4s;
+                        &:hover {
+                            background-color: rgb(51, 51, 51, 0.2);
+                            border-radius: 50px;
+                        }
+                    }
+                    .svg_text {
+                        font-size: 1.4rem;
+                        color: $text;
+                        margin-left: 5px;
+                        font-weight: 500 ; 
+                    }
+                    &.singleColor svg {
+                        color: var(--iconColor) !important;
+                    }
+                    &.singleColor .svg_text {
+                        color: var(--iconColor) !important;
+                    }
+                    svg {
+                        color: #000;
+                        &#snapChatSvg {
+                            color: #FFFC00;
+                            filter: var(--snapChatGlow);
+                        }
+                        &#instagramSvg {
+                            color: #f472b6;
+                            filter: var(--instagramGlow);
+                        }
+                        &#youtubeSvg {
+                            color: #FF0000;
+                            filter: var(--youtubeGlow);
+                        }
+                        &#redditSvg {
+                            color: #FE4000;
+                            filter: var(--redditGlow);
+                        }
+                        &#tiktokSvg {
+                            color: #fff;
+                            filter: var(--tiktokGlow);
+                        }
+                        &#telegramSvg {
+                            color: #2aabee;
+                            filter: var(--telegramGlow);
+                        }
+                        &#facebookSvg {
+                            color: #2563eb;
+                            filter: var(--facebookGlow);
+                        }
+                        &#spotifySvg {
+                            color: #1ed760;
+                            filter: var(--spotifyGlow);
+                        }
+                        &#steamSvg {
+                            color: #fff;
+                            filter: var(--steamGlow);
+                        }
+                        &#discordSvg {
+                            color: #5865f2;
+                            filter: var(--discordGlow);
+                        }
+                        &#riotSvg {
+                            color: #d1363a;
+                            filter: var(--riotGlow);
+                        }
+                        &#pinterestSvg {
+                            color: #e4001c;
+                            filter: var(--pinterestGlow);
+                        }
+                        &#emailSvg {
+                            color: #fff;
+                            filter: var(--emailGlow);
+                        }
+                        &#robloxSvg {
+                            color: #fff;
+                            filter: var(--robloxGlow);
+                        }
+                        &#paypalSvg {
+                            color: #003087;
+                            filter: var(--paypalGlow);
+                        }
+                        &#soundcloudSvg {
+                            color: #FF4700;
+                            filter: var(--soundcloudGlow);
+                        }
+                    }
+                }
+            }
+        }
+        .second_embed_container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            // doi ti
+            @include respond-to(medium){
+                flex-direction: column;
+            }
+            .border {
+                content: "";
+                border: var(--border);
+            }
+            .discord_container {
+                display: flex;
+                justify-content: center;
+                min-width: 280px;
+                width: 100%;
+                @include respond-to(medium){
+                    width: 100%;
+                    min-width: unset;
+                }
+                .discord_content {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    padding: 5px;
+                    width: 100%;
+                    border-radius: 25px;
+                    top: 0;
+                    &.reveal {
+                        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                        opacity: 0;
+                        scale: 0.7;
+                        overflow: hidden;
+                        height: 0px;
+                        &.active {
+                            opacity: 1;
+                            height: 100%;
+                            scale: 1;
+                        }
+                    }
+                    .discord_link_large {
+                        font-size: 1.6rem;
+                        background-color: #229150;
+                        border-radius: 8px;
+                        color: #fafafa;
+                        display: flex;
+                        justify-content: center;
+                        padding: 10px 15px;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+                    .discord_avatar_container {
+                        position: relative;
+                        .discord_avatar {
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                        .discord_status {
+                            position: absolute;
+                            width: 17px;
+                            height: 17px;
+                            bottom: 5px;
+                            right: 5px;
+                            object-fit: cover;
+                        }
+                    }
+                    .text_container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        div {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            .discord_name {
+                                font-size: 2.2rem;
+                                color: var(--nameColor);
+                                font-weight: 500;
+                                line-height: 1em;
+                            }
+                            .discord_description {
+                                display: flex;
+                                margin-top: 5px;
+                                font-size: 1.4rem;
+                                color: var(--discordDescription);
+                                line-height: 1.2em;
+                                .high {
+                                    color: var(--nameColor);
+                                    font-weight: 500;
+                                }
+                                .description_icon {
+                                    width: 20px;
+                                    height: 20px;
+                                    object-fit: cover;
+                                    margin-right: 5px;
+                                }
+                                span {
+                                    display: flex;
+                                    align-items: center;
+                                    margin-right: 5px;
+                                    svg {
+                                        color: #DCE7E8;
+                                    }
+                                    .online_svg {
+                                        color: #23a559;
+                                    }
+                                }
+                            }
+                        }
+                        .img_activity {
+                            height: 70px;
+                            width: 70px;
+                            border-radius: 15px;
+                            object-fit: cover;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .audio_container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .noUi-target {
+                border: none;
+                box-shadow: unset;
+                background-color: #555;
+            }
+            .noUi-connect {
+                background-color: var(--audioControlColor);
+            }
+            .noUi-base, 
+            .noUi-connects {
+                z-index: unset;
+            }
+            .noUi-connects {
+                background-color: var(--audioControlRgba05);
+            }
+            .noUi-horizontal {
+                height: 8px;
+            }
+            .noUi-handle {
+                background-color: #fff;
+                border-radius: 50%;
+                width: 16px !important;
+                height: 16px !important;
+                box-shadow: unset;
+                border: none;
+                top: -4px !important;
+                right: -12px !important;
+                cursor: pointer;
+            
+                &::after {
+                    display: none;
+                }
+            
+                &::before {
+                    display: none;
+                }
+            }
+            .name {
+                font-size: 1.8rem;
+                color: var(--audioControlColor);
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            .flex {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                width: 100%;
+                .duration {
+                    font-size: 1.4rem;
+                    color: var(--audioControlColor);
+                    width: 20px;
+                }
+                .slideTrack { 
+                    flex: 1;
+                    margin: 0 10px;
+                    cursor: pointer;
+                }
+                button {
+                    font-size: 3.6rem;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    line-height: 0;
+                    width: max-content;
+                    svg {
+                        color: var(--audioControlColor);
+                        cursor: pointer;
+                    }
+                }
+            }
+            .audio_control {
+                display: flex;
+                align-items: center;
+                position: fixed;
+                top: 15px;
+                left: 15px;
+                line-height: 0;
+                width: 24px;
+                border-radius: 10px;
+                z-index: 5;
+                transition: 0.5s;
+                gap: 10px;
+                overflow: hidden;
+                cursor: pointer;
+                &.revealAudio {
+                    transition: 0.5s;
+                    opacity: 0;
+        
+                    &.active {
+                        opacity: 1;
+                    }
+                }
+                &:hover {
+                    width: 120px;
+                    padding-right: 25px;
+                    @include respond-to(medium){
+                        width: 24px;
+                        padding-right: 0;
+                    }
+                }
+                .volumeIcon {
+                    font-size: 2.4rem;
+                    color: var(--audioControlColor);
+                    &.active {
+                        animation: bounce .3s;
+                    }
+                    &.unactive {
+                        animation: bounceRepeat .3s;
+                    }
+                }
+            }
+        }
+    }
+}
