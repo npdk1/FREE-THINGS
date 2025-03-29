@@ -15,3 +15,5 @@ For hosting? Upload all files, tweak config.js (image links and stuff), then pus
 Grab hex colors for config.js here: htmlcolorcodes.com 🌈
 
 No install or setup help, figure it out yourself, coder! 😎💾
+<img src="https://i.imgur.com/WhFK6Rq.png" alt="Uploaded Image">
+<img src="https://i.imgur.com/Sg0L8ce.png" alt="Uploaded Image">
